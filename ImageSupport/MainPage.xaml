@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="ImageSupport.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ImageSupport"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image Loaded="Image_Loaded">
+            <Image.Source>
+                <BitmapImage
+                    x:Name="imageSource"
+                    UriSource="Assets/pic.gif" />
+            </Image.Source>
+        </Image>
+        <Button Click="Button_Click" Content="PlayOrStop" />
+    </StackPanel>
+</Page>
