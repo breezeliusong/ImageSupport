@@ -57,5 +57,26 @@ namespace ImageSupport
                 
             }
         }
+
+        private async void ShowImage(object sender, RoutedEventArgs e)
+        {
+            var folder = Package.Current.InstalledLocation;
+            var file = await folder.GetFileAsync("linepic.png");
+
+            var bitmapImage1 = new BitmapImage();
+            //It seems, Image control decodes the picture quite flexibly so that it can suit for acutal UI size. If you set the BitmapImage to Image.Source first, 
+            //the picture is to be smoothed properly like the second one.
+            image1.Source = bitmapImage1;
+
+            using (var stream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                await bitmapImage1.SetSourceAsync(stream);
+            }
+            var bitmapImage2 = new BitmapImage(new Uri(BaseUri, "linepic.png"));
+
+
+            image2.Source = bitmapImage2;
+            //_image.Source = bitmapImage2;
+        }
     }
 }

@@ -16,5 +16,10 @@
             </Image.Source>
         </Image>
         <Button Click="Button_Click" Content="PlayOrStop" />
+
+        <Button Click="ShowImage" Content="ImageShowing" />
+
+        <Image Width="300" Height="300" Name="image1"></Image>
+        <Image Width="300" Height="300" Name="image2"></Image>
     </StackPanel>
 </Page>
